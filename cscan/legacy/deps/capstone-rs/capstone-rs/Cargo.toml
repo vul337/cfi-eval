@@ -1,0 +1,33 @@
+[package]
+authors = ["m4b <m4b.github.io@gmail.com>",
+           "Richo Healey <richo@psych0tik.net>",
+           "Travis Finkenauer <tmfinken@gmail.com>"]
+description = "High level bindings to capstone disassembly engine (https://capstone-engine.org/)"
+keywords = ["disassemble"]
+license = "MIT"
+name = "capstone"
+repository = "https://github.com/capstone-rust/capstone-rs"
+readme = "README.md"
+edition = "2018"
+version = "0.6.0"
+
+[badges]
+travis-ci = { repository = "capstone-rust/capstone-rs" }
+
+[dependencies]
+capstone-sys = { path = "../capstone-sys", version = "0.10.0" }
+libc = { version = "0.2", default-features = false }
+
+[dev-dependencies]
+macho = "0.*"
+criterion = "0.2"
+rayon = "1.1"
+
+[[bench]]
+name = "my_benchmark"
+harness = false
+
+[features]
+default = []
+
+use_bindgen = ["capstone-sys/use_bindgen"]

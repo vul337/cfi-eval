@@ -1,0 +1,25 @@
+[package]
+name = "cfifuzz"
+version = "0.1.0"
+authors = ["Hugh Wang <hghwng@gmail.com>"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+dfuzz-os = { path = "deps/dfuzz-os" }
+procfs = "0.5"
+capstone = { path = "deps/capstone-rs/capstone-rs" }
+goblin = "0"
+serde = {version = "1.0", features = ['derive'] }
+
+log = "0.4"
+env_logger = "0.7"
+field-offset = "0.1"
+
+humansize = "1"
+structopt = "0.3"
+serde_json = "1"
+
+[profile.release]
+#lto = true

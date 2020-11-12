@@ -1,0 +1,115 @@
+dora@dora-virtual-machine:~/test/testlibs$ ./trustedRT_doratest vdso_test
+
+[CFI WARNING] Call is a callback:
+secuLoader (0x00013e87): <so_init+0x037> ci-> vdso_test (0x08048568): <_init>
+
+[CFI WARNING] Call is a callback:
+secuLoader (0x00013eb8): <so_init+0x068> ci-> vdso_test (0x08048770): <frame_dummy>
+
+[CFI WARNING] Special case:
+secuLoader (0x00013e87): <so_init+0x037> ci-> libc.so.6 (0x00019380): <__libc_init_first+0x010>
+
+[CFI WARNING] Call is a callback:
+secuLoader (0x00013eb8): <so_init+0x068> ci-> libc.so.6 (0x00019340)
+
+[CFI WARNING] Call is a callback:
+secuLoader (0x00013eb8): <so_init+0x068> ci-> libc.so.6 (0x000190c0)
+
+[CFI WARNING] Call is a callback:
+libc.so.6 (0x00031599): <bsearch+0x049> ci-> libc.so.6 (0x00099380)
+
+[CFI WARNING] Call is a callback:
+libc.so.6 (0x00031599): <bsearch+0x049> ci-> libc.so.6 (0x00099380)
+
+[CFI WARNING] Call is a callback:
+secuLoader (0x00013eb8): <so_init+0x068> ci-> libc.so.6 (0x00019050)
+
+[CFI WARNING] Special case:
+secuLoader (0x00013fd1): <transfer_control+0x041> ji-> vdso_test (0x080486a0): <_start>
+vdso_test (0x080486bc): <_start+0x01c> ci-> libc.so.6 (0x00019440): <__libc_start_main>
+libc.so.6 (0x000194c8): <__libc_start_main+0x088> ci-> vdso_test (0x08048af0): <__libc_csu_init>
+vdso_test (0x08048b34): <__libc_csu_init+0x044> ci-> vdso_test (0x08048770): <frame_dummy>
+libc.so.6 (0x0001952f): <__libc_start_main+0x0ef> ci-> vdso_test (0x08048893): <main>
+vdso_test (0x080488ca): <main+0x037> ci-> libc.so.6 (0x0004c8a0): <_IO_printf>
+libc.so.6 (0x00042882): <vfprintf+0x0152> ci-> libc.so.6 (0x000706f0): <_IO_file_xsputn>
+libc.so.6 (0x00070760): <_IO_file_xsputn+0x070> ci-> libc.so.6 (0x00071460): <_IO_file_overflow>
+libc.so.6 (0x0007250a): <_IO_doallocbuf+0x04a> ci-> libc.so.6 (0x00064230): <_IO_file_doallocate>
+libc.so.6 (0x0006428b): <_IO_file_doallocate+0x05b> ci-> libc.so.6 (0x00071710): <_IO_file_stat>
+libc.so.6 (0x000e002b): <__fxstat64+0x01b> ci-> vdso (0x00000fd0): <__kernel_vsyscall>
+libc.so.6 (0x000edb81): <mmap+0x031> ci-> vdso (0x00000fd0): <__kernel_vsyscall>
+libc.so.6 (0x0007261e): <_IO_default_xsputn+0x08e> ci-> libc.so.6 (0x00071460): <_IO_file_overflow>
+libc.so.6 (0x00044a02): <vfprintf+0x022d2> ci-> libc.so.6 (0x000706f0): <_IO_file_xsputn>
+libc.so.6 (0x00042f3b): <vfprintf+0x080b> ci-> libc.so.6 (0x000706f0): <_IO_file_xsputn>
+libc.so.6 (0x0006fba1) ci-> libc.so.6 (0x0006fc80): <_IO_file_write>
+libc.so.6 (0x000e0f4c): <write+0x01c> ci-> vdso (0x00000fd0): <__kernel_vsyscall>
+In main
+libc.so.6 (0x000428b8): <vfprintf+0x0188> ci-> libc.so.6 (0x000793d0): <free>
+libc.so.6 (0x000428c6): <vfprintf+0x0196> ci-> libc.so.6 (0x000793d0): <free>
+vdso_test (0x080488e9): <main+0x056> ci-> libc.so.6 (0x00064eb0): <fopen>
+libc.so.6 (0x00064e03) ci-> libc.so.6 (0x00078ef0): <malloc>
+
+[CFI WARNING] Call is a callback:
+libc.so.6 (0x000790c5): <__libc_malloc+0x01d5> ci-> libc.so.6 (0x000791d0)
+
+[CFI WARNING] Special case:
+libc.so.6 (0x0012a36d): <_dl_addr+0x02d> ci-> secuLoader (0x00013ff0): <lock_recursive>
+
+[CFI WARNING] Special case:
+libc.so.6 (0x0012a3f7): <_dl_addr+0x0b7> ci-> secuLoader (0x00014000): <unlock_recursive>
+libc.so.6 (0x00076e80) ci-> libc.so.6 (0x0007af40): <__default_morecore>
+libc.so.6 (0x000e94a2): <brk+0x022> ci-> vdso (0x00000fd0): <__kernel_vsyscall>
+libc.so.6 (0x00076fc1) ci-> libc.so.6 (0x0007af40): <__default_morecore>
+libc.so.6 (0x000e09dc): <__open+0x01c> ci-> vdso (0x00000fd0): <__kernel_vsyscall>
+vdso_test (0x08048935): <main+0x0a2> ci-> libc.so.6 (0x00064bc0): <fgets>
+libc.so.6 (0x0007237d): <__uflow+0x08d> ci-> libc.so.6 (0x00072550): <_IO_default_uflow>
+libc.so.6 (0x00072566): <_IO_default_uflow+0x016> ci-> libc.so.6 (0x00071230): <_IO_file_underflow>
+libc.so.6 (0x00071348): <_IO_file_underflow+0x0118> ci-> libc.so.6 (0x00071690): <_IO_file_read>
+libc.so.6 (0x000e0ecc): <read+0x01c> ci-> vdso (0x00000fd0): <__kernel_vsyscall>
+vdso_test (0x08048908): <main+0x075> ci-> libc.so.6 (0x00132d00): <strstr>
+vdso_test (0x08048935): <main+0x0a2> ci-> libc.so.6 (0x00064bc0): <fgets>
+
+[CFI WARNING] Special case:
+vdso_test (0x0804894a): <main+0x0b7> ci-> libc.so.6 (0x000643c0): <_IO_fclose>
+libc.so.6 (0x00070a86): <_IO_file_close_it+0x0156> ci-> libc.so.6 (0x0006fd10): <_IO_file_close>
+libc.so.6 (0x000e0e45): <__close+0x015> ci-> vdso (0x00000fd0): <__kernel_vsyscall>
+libc.so.6 (0x000edc4f): <munmap+0x0f> ci-> vdso (0x00000fd0): <__kernel_vsyscall>
+libc.so.6 (0x00064496): <_IO_fclose+0x0d6> ci-> libc.so.6 (0x00070af0): <_IO_file_finish>
+libc.so.6 (0x0006450f): <_IO_fclose+0x014f> ci-> libc.so.6 (0x000793d0): <free>
+vdso_test (0x08048992): <main+0x0ff> ci-> libc.so.6 (0x00056040): <__isoc99_sscanf>
+vdso_test (0x080489b8): <main+0x0125> ci-> libc.so.6 (0x000edc90): <mprotect>
+libc.so.6 (0x000edca2): <mprotect+0x012> ci-> vdso (0x00000fd0): <__kernel_vsyscall>
+vdso_test (0x08048a08): <main+0x0175> ci-> libc.so.6 (0x0004c8a0): <_IO_printf>
+libc.so.6 (0x00072178): <__overflow+0x048> ci-> libc.so.6 (0x00071460): <_IO_file_overflow>
+libc.so.6 (0x000461d6): <vfprintf+0x03aa6> ci-> libc.so.6 (0x000706f0): <_IO_file_xsputn>
+victim = 0xf7fc3000
+vdso_test (0x08048841): <patch+0x05b> ci-> libc.so.6 (0x000edc90): <mprotect>
+libc.so.6 (0x000edca2): <mprotect+0x012> ci-> vdso (0x00000fd0): <__kernel_vsyscall>
+vdso_test (0x08048a2e): <main+0x019b> ci-> libc.so.6 (0x0004c8a0): <_IO_printf>
+In main
+vdso_test (0x08048a4d): <main+0x01ba> ci-> libc.so.6 (0x0004c8a0): <_IO_printf>
+victim is: 0x804a064
+vdso_test (0x08048a62): <main+0x01cf> ci-> libc.so.6 (0x0004c8a0): <_IO_printf>
+name is: 0x804a054
+vdso_test (0x08048a77): <main+0x01e4> ci-> libc.so.6 (0x0004c8a0): <_IO_printf>
+ptr is: 0x804a058
+vdso_test (0x08048a87): <main+0x01f4> ci-> libc.so.6 (0x00066830): <puts>
+libc.so.6 (0x000668fa): <puts+0x0ca> ci-> libc.so.6 (0x000706f0): <_IO_file_xsputn>
+plz input your name:
+vdso_test (0x08048a9b): <main+0x0208> ci-> libc.so.6 (0x000e0eb0): <read>
+0xf7fc3000
+vdso_test (0x08048ab0): <main+0x021d> ci-> libc.so.6 (0x00055ba0): <__isoc99_scanf>
+libc.so.6 (0x000713f6): <_IO_file_underflow+0x01c6> ci-> libc.so.6 (0x00071460): <_IO_file_overflow>
+0xf7fc3000
+vdso_test (0x08048ac4): <main+0x0231> ci-> vdso (0x00000000): <__kernel_rt_sigreturn>
+vdso_test (0x080487a9): <hack+0x0e> ci-> libc.so.6 (0x00066830): <puts>
+Injected code executed!
+
+[CFI WARNING] Special case:
+vdso_test (0x080487b9): <hack+0x01e> ci-> libc.so.6 (0x0003f0b0): <__libc_system>
+libc.so.6 (0x0002df65) ci-> vdso (0x00000fd0): <__kernel_vsyscall>
+libc.so.6 (0x0002e0e9): <sigprocmask+0x059> ci-> vdso (0x00000fd0): <__kernel_vsyscall>
+libc.so.6 (0x0003ec20) ci-> vdso (0x00000fd0): <__kernel_vsyscall>
+libc.so.6 (0x000ba67c): <__waitpid+0x01c> ci-> vdso (0x00000fd0): <__kernel_vsyscall>
+libc.so.6 (0x000bafa8): <execve+0x028> ci-> vdso (0x00000fd0): <__kernel_vsyscall>
+$ ls
+20.error	     foreman_qcif.264			libm-2.15.so		lockdown.log

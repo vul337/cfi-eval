@@ -1,0 +1,1 @@
+../../scripts/tag_release.sh
